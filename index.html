@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="orderApp">
+<head>
+  <meta charset="utf-8">
+  <title>Orders App</title>
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+  <!-- App Files -->
+  <script src="app.js"></script>
+  <script src="services/orderService.js"></script>
+  <script src="controllers/orderListController.js"></script>
+</head>
+
+<body>
+  <div ng-controller="OrderListController">
+    <ng-include src="'views/order-list.html'"></ng-include>
+  </div>
+</body>
+</html>

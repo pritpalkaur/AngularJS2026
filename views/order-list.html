@@ -1,0 +1,50 @@
+<h2>My Orders</h2>
+
+<div ng-if="loading">Loading orders...</div>
+
+<table border="1" ng-if="!loading" style="width: 100%; border-collapse: collapse;">
+  <thead style="background: #f0f0f0;">
+    <tr>
+      <th>ID</th>
+      <th>Status</th>
+      <th>Total</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat-start="order in orders">
+      <td>{{ order.id }}</td>
+      <td>{{ order.status }}</td>
+      <td>{{ order.totalAmount | currency:'$' }}</td>
+      <td>
+        <button ng-click="order.show = !order.show">
+          {{ order.show ? 'Hide' : 'View' }} Items
+        </button>
+      </td>
+    </tr>
+
+    <tr ng-repeat-end ng-if="order.show">
+      <td colspan="4">
+        <strong>Items:</strong>
+        <table border="1" style="width: 100%; margin-top: 10px;">
+          <thead>
+            <tr>
+              <th>Product ID</th>
+              <th>Quantity</th>
+              <th>Unit Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in order.items">
+              <td>{{ item.productId }}</td>
+              <td>{{ item.quantity }}</td>
+              <td>{{ item.unitPrice | currency:'$' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
