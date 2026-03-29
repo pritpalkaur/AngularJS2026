@@ -1,0 +1,13 @@
+<h2>Login</h2>
+
+<form ng-submit="login()">
+  <label>Email</label>
+  <input type="text" ng-model="credentials.email">
+
+  <label>Password</label>
+  <input type="password" ng-model="credentials.password">
+
+  <button type="submit">Login</button>
+</form>
+<div ng-if="error" style="color: red; margin-top: 10px;">
+  {{ error }}

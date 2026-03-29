@@ -1,5 +1,5 @@
 app.controller("OrderListController", function ($scope, OrderService) {
-
+alert("OrderListController loaded");
     $scope.orders = [];
     $scope.loading = true;
 
