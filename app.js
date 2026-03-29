@@ -31,6 +31,12 @@ app.config(function ($httpProvider) {
     });
 });
 app.run(function ($rootScope) {
+    
+        $rootScope.logout = function () {
+        localStorage.removeItem("token");
+        window.location = "#!/login";
+    };
+
     $rootScope.$on("$routeChangeStart", function (event, next) {
         var token = localStorage.getItem("token");
 

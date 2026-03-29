@@ -9,15 +9,22 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
   <!-- App Files -->
 <script src="app.js"></script>
+<script src="controllers/mainController.js"></script>
 <script src="services/authService.js"></script>
 <script src="services/orderService.js"></script>
 <script src="controllers/loginController.js"></script>
 <script src="controllers/orderListController.js"></script>
 
 </head>
-
-<body>
-  <div ng-view></div>
+<!-- <body bgcolor="red"> -->
+<body ng-controller="MainController">
+    <div>
+        <!-- <button ng-click="goToOrders()">Orders</button> -->
+    <button ng-click="logout()" ng-if="tokenExists()">Logout</button>
+    </div>
+    <div ng-view>
+      thia ia test
+    </div>
 </body>
 
 </html>
