@@ -1,4 +1,4 @@
-var app = angular.module("orderApp", ["ngRoute"]);
+var app = angular.module("orderApp", ["ngRoute", "ngMaterial"]);
 
 app.config(function ($routeProvider) {
     $routeProvider

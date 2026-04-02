@@ -1,4 +1,41 @@
-<h2>Login</h2>
+<div layout="column" layout-align="center center" style="height: 100vh;">
+
+  <md-card style="width: 350px; padding: 20px;">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Login</span>
+      </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content>
+
+      <div ng-if="errorMessage" style="color: red; margin-bottom: 10px;">
+        {{ errorMessage }}
+      </div>
+
+      <form ng-submit="login()">
+
+        <md-input-container class="md-block">
+          <label>Email</label>
+          <input ng-model="credentials.email" type="text" required>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Password</label>
+          <input ng-model="credentials.password" type="password" required>
+        </md-input-container>
+
+        <md-button type="submit" class="md-raised md-primary" style="width: 100%;">
+          Login
+        </md-button>
+
+      </form>
+
+    </md-card-content>
+  </md-card>
+
+</div>
+<!-- <h2>Login</h2>
 
 <form ng-submit="login()">
   <label>Email</label>
@@ -10,4 +47,4 @@
   <button type="submit">Login</button>
 </form>
 <div ng-if="error" style="color: red; margin-top: 10px;">
-  {{ error }}
+  {{ error }} -->
